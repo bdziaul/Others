@@ -26,14 +26,44 @@ body{
   padding-top:110px;
   user-select: none;
 
-  /* === Neon Green Mouse Cursor === */
-body{
-  cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iNiIgc3Ryb2tlPSIjMDhGNzAwIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz4KPC9zdmc+'), auto;
+ /* Hide default cursor */
+body {
+  cursor: none;
 }
 
-a:hover, button:hover, select:hover {
-  cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIj00FF00IiBzdHJva2Utd2lkdGg9IjMiLz4KPC9zdmc+'), pointer;
+/* Custom cursor */
+#customCursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #00FF00; /* Neon Green */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s linear, width 0.1s ease, height 0.1s ease, border-color 0.1s ease;
+  z-index: 9999;
 }
+
+/* Hover effects for links/buttons/selects */
+a:hover ~ #customCursor,
+button:hover ~ #customCursor,
+select:hover ~ #customCursor {
+  width: 24px;
+  height: 24px;
+  border-color: #00FF66; /* Brighter Neon Green */
+}
+</style>
+
+<!-- Cursor element -->
+<div id="customCursor"></div>
+
+<script>
+const cursor = document.getElementById('customCursor');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
 
 /* Header */
 header{
