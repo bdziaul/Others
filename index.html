@@ -356,8 +356,8 @@ document.addEventListener("mousemove", (e) => {
     ziaDiv.style.opacity = "1";
     // Circular animation
     function animateZia() {
-      angle += 0.09; // ঘূর্ণনের গতি
-      const radius = 10; // কার্সরের চারপাশ দূরত্ব
+      angle += 0.06; // ঘূর্ণনের গতি
+      const radius = 07; // কার্সরের চারপাশ দূরত্ব
       ziaDiv.style.left = mouseX + radius * Math.cos(angle) + "px";
       ziaDiv.style.top  = mouseY + radius * Math.sin(angle) + "px";
       if(ziaDiv.style.opacity == "1"){
