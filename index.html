@@ -25,6 +25,13 @@ body{
   text-align:center;
   padding-top:110px;
   user-select: none;
+
+  /* === Neon Green Mouse Cursor === */
+  cursor: url('https://i.imgur.com/IO2nH0H.png') 16 16, auto;
+}
+
+a:hover, button:hover, select:hover {
+  cursor: url('https://i.imgur.com/YXw3u7e.png') 16 16, pointer;
 }
 
 /* Header */
@@ -267,7 +274,8 @@ footer a:hover{color:#ff6600;}
   <div class="box"><h2><a href="https://ln.run/k58wd" class="link-title" onclick="openNewTab(event)">উদ্দীপন অফিসের মানচিত্র</a></h2><span>UDDIPAN All Branch Office, Regional Office & Zone Office Location</span></div>
   <div class="box"><h2><a href="https://www.uddipanprobe.com/" class="link-title" onclick="openNewTab(event)">প্রোব স্বাস্থ্যসেবা</a></h2><span>Employee Profile, Service, Doctor, Health Card, Report</span></div>
   <div class="box"><h2><a href="https://chatudpn.netlify.app/" class="link-title" onclick="openNewTab(event)">অনলাইন চ্যাট</a></h2><span>Please Identify Yourself : Username & Password</span></div>
-    <!-- Examination -->
+
+  <!-- Examination -->
   <div class="box">
     <h2><span class="no-click">পরিক্ষার ফলাফল</span></h2>
     <select onchange="if(this.value) window.open(this.value, '_blank', 'noopener,noreferrer'); this.selectedIndex=0;">      
@@ -332,9 +340,9 @@ let idleTimer;
 const ziaDiv = document.createElement("div");
 ziaDiv.textContent = "Zia";
 ziaDiv.style.position = "fixed";
-ziaDiv.style.color = "rgba(0,128,0,0.3)"; // হালকা সবুজ
-ziaDiv.style.background = "rgba(200,255,200,0.35)"; // হালকা সবুজ গোলাকার ব্যাকগ্রাউন্ড
-ziaDiv.style.borderRadius = "50%"; // গোলাকার
+ziaDiv.style.color = "rgba(0,128,0,0.3)";
+ziaDiv.style.background = "rgba(200,255,200,0.35)";
+ziaDiv.style.borderRadius = "50%";
 ziaDiv.style.padding = "8px 12px";
 ziaDiv.style.fontSize = "10px";
 ziaDiv.style.fontWeight = "300";
@@ -354,10 +362,9 @@ document.addEventListener("mousemove", (e) => {
   
   idleTimer = setTimeout(() => {
     ziaDiv.style.opacity = "1";
-    // Circular animation
     function animateZia() {
-      angle += 0.07; // ঘূর্ণনের গতি
-      const radius = 10; // কার্সরের চারপাশ দূরত্ব
+      angle += 0.07;
+      const radius = 10;
       ziaDiv.style.left = mouseX + radius * Math.cos(angle) + "px";
       ziaDiv.style.top  = mouseY + radius * Math.sin(angle) + "px";
       if(ziaDiv.style.opacity == "1"){
@@ -365,7 +372,7 @@ document.addEventListener("mousemove", (e) => {
       }
     }
     animateZia();
-  }, 2000); // 2 সেকেন্ড idle
+  }, 2000);
 });
 </script>
 
