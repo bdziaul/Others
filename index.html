@@ -25,47 +25,8 @@ body{
   text-align:center;
   padding-top:110px;
   user-select: none;
-
-<style>
-/* Hide default cursor */
-body {
-  cursor: none;
+  cursor: none; /* Custom Cursor */
 }
-
-/* Custom cursor */
-#customCursor {
-  position: fixed;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #00FF00; /* Neon Green */
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.05s linear, width 0.1s ease, height 0.1s ease, border-color 0.1s ease;
-  z-index: 9999;
-}
-
-/* Hover effects for links/buttons/selects */
-a:hover ~ #customCursor,
-button:hover ~ #customCursor,
-select:hover ~ #customCursor {
-  width: 24px;
-  height: 24px;
-  border-color: #00FF66; /* Brighter Neon Green */
-}
-</style>
-
-<!-- Cursor element -->
-<div id="customCursor"></div>
-
-<script>
-const cursor = document.getElementById('customCursor');
-
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
-</script>
 
 /* Header */
 header{
@@ -248,6 +209,28 @@ footer a:hover{color:#ff6600;}
   select, .open-btn {width:100%;font-size:14px;}
   body {padding-top:230px;} 
 }
+
+/* === Custom Cursor Styles === */
+#customCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00FF00;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease, height 0.15s ease, background 0.15s ease, border 0.15s ease;
+  box-shadow: 0 0 8px #00FF00, 0 0 12px #00FF00, 0 0 20px #00FF00;
+  z-index: 9999;
+}
+#customCursor.active {
+  width: 35px;
+  height: 35px;
+  border: 3px solid #00FF00;
+  box-shadow: 0 0 12px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
+}
 </style>
 </head>
 <body oncontextmenu="return false">
@@ -307,8 +290,7 @@ footer a:hover{color:#ff6600;}
   <div class="box"><h2><a href="https://ln.run/k58wd" class="link-title" onclick="openNewTab(event)">উদ্দীপন অফিসের মানচিত্র</a></h2><span>UDDIPAN All Branch Office, Regional Office & Zone Office Location</span></div>
   <div class="box"><h2><a href="https://www.uddipanprobe.com/" class="link-title" onclick="openNewTab(event)">প্রোব স্বাস্থ্যসেবা</a></h2><span>Employee Profile, Service, Doctor, Health Card, Report</span></div>
   <div class="box"><h2><a href="https://chatudpn.netlify.app/" class="link-title" onclick="openNewTab(event)">অনলাইন চ্যাট</a></h2><span>Please Identify Yourself : Username & Password</span></div>
-
-  <!-- Examination -->
+    <!-- Examination -->
   <div class="box">
     <h2><span class="no-click">পরিক্ষার ফলাফল</span></h2>
     <select onchange="if(this.value) window.open(this.value, '_blank', 'noopener,noreferrer'); this.selectedIndex=0;">      
@@ -324,6 +306,9 @@ footer a:hover{color:#ff6600;}
 <footer>
   © 2025 <a href="https://www.uddipan.org" class="uddipan" onclick="openNewTab(event)">UDDIPAN</a> | Developed by <a href="https://www.facebook.com/ziaulz" class="mfcib" onclick="openNewTab(event)">MFCIB</a> Team
 </footer>
+
+<!-- Custom Cursor -->
+<div id="customCursor"></div>
 
 <script>
 // Live Time
@@ -367,14 +352,28 @@ document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('selectstart', e => e.preventDefault());
 document.addEventListener('copy', e => e.preventDefault());
 document.addEventListener('cut', e => e.preventDefault());
-  
+
+/* === Custom Cursor JS === */
+const cursor = document.getElementById("customCursor");
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+// Hover effect on clickable items
+const hoverElements = document.querySelectorAll('a, button, select');
+hoverElements.forEach(el => {
+  el.addEventListener("mouseenter", () => cursor.classList.add("active"));
+  el.addEventListener("mouseleave", () => cursor.classList.remove("active"));
+});
+
 /* === Mouse Idle "Zia" Circular Follow (Green) === */
 let idleTimer;
 const ziaDiv = document.createElement("div");
 ziaDiv.textContent = "Zia";
 ziaDiv.style.position = "fixed";
-ziaDiv.style.color = "rgba(0,128,0,0.3)";
-ziaDiv.style.background = "rgba(200,255,200,0.35)";
+ziaDiv.style.color = "#00FF00";
+ziaDiv.style.background = "rgba(0,255,0,0.1)";
 ziaDiv.style.borderRadius = "50%";
 ziaDiv.style.padding = "8px 12px";
 ziaDiv.style.fontSize = "10px";
@@ -392,12 +391,12 @@ document.addEventListener("mousemove", (e) => {
   ziaDiv.style.opacity = "0";
   mouseX = e.pageX;
   mouseY = e.pageY;
-  
+
   idleTimer = setTimeout(() => {
     ziaDiv.style.opacity = "1";
     function animateZia() {
-      angle += 0.07;
-      const radius = 10;
+      angle += 0.05;
+      const radius = 20;
       ziaDiv.style.left = mouseX + radius * Math.cos(angle) + "px";
       ziaDiv.style.top  = mouseY + radius * Math.sin(angle) + "px";
       if(ziaDiv.style.opacity == "1"){
@@ -405,7 +404,7 @@ document.addEventListener("mousemove", (e) => {
       }
     }
     animateZia();
-  }, 2000);
+  }, 5000);
 });
 </script>
 
