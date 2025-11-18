@@ -25,7 +25,6 @@ body{
   text-align:center;
   padding-top:110px;
   user-select: none;
-  cursor: none; /* Custom Cursor */
 }
 
 /* Header */
@@ -79,21 +78,19 @@ header h1:hover{
 
 /* Box */
 .box{
-  background: rgba(96, 125, 139, 0.8); /* Blue-Gray 80% translucent */
-  border-radius:13px;
-  box-shadow:0 3px 10px rgba(0,0,0,0.15); /* subtle shadow */
-  padding:35px 25px; /* একটু বড় padding */
-  transition: all .3s ease;
-  color:#FFEB99; /* lighter text inside box */
-  text-align: center; /* সব content center */
-  transform: scale(1.01); /* একটু বড় দেখানোর জন্য */
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  padding:25px 18px;
+  transition:all .3s ease;
+  text-align: center;
+  transform: scale(1.05);
+}
+.box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 22px rgba(0,0,0,0.15);
 }
 
-/* Hover effect remove */
-.box:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 10px #00FF00, 0 0 15px #FFEB99;
-}
 /* Headline */
 .box h2{ margin-bottom:10px; font-size:28px; }
 .box span:not(.no-click){color:#8B0000;font-size:18px;}
@@ -213,28 +210,6 @@ footer a:hover{color:#ff6600;}
   select, .open-btn {width:100%;font-size:14px;}
   body {padding-top:230px;} 
 }
-
-/* === Custom Cursor Styles === */
-#customCursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #00FF00;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: width 0.15s ease, height 0.15s ease, background 0.15s ease, border 0.15s ease;
-  box-shadow: 0 0 8px #00FF00, 0 0 12px #00FF00, 0 0 20px #00FF00;
-  z-index: 9999;
-}
-#customCursor.active {
-  width: 35px;
-  height: 35px;
-  border: 3px solid #00FF00;
-  box-shadow: 0 0 12px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
-}
 </style>
 </head>
 <body oncontextmenu="return false">
@@ -286,15 +261,15 @@ footer a:hover{color:#ff6600;}
   <div class="box"><h2><a href="http://103.12.205.37/uddipanonline/" class="link-title" onclick="openNewTab(event)">উদ্দীপন অনলাইন</a></h2><span>Asset, Budget, Transaction, OTP, Omni Support, RM Monitoring & Report</span></div>
   <div class="box"><h2><a href="http://103.12.205.37/dashboard/" class="link-title" onclick="openNewTab(event)">উদ্দীপন ড্যাশবোর্ড</a></h2><span>MFP, Customer Feedback, Performer, Trend & Report</span></div>
   <div class="box"><h2><a href="http://103.12.205.37/itmonitoringtools/" class="link-title" onclick="openNewTab(event)">আইটি মনিটরিং</a></h2><span>Support Request, Purchase, Servicing Form, Report</span></div>
-  <div class="box"><h2><a href="https://nvs.mra.gov.bd/dashboard/" class="link-title" onclick="openNewTab(event)">জাতীয় পরিচয়পত্র</a></h2><span>Customer NID Verification System Check Is For MFCIB Team Only</span></div>
-  <div class="box"><h2><a href="https://everify.bdris.gov.bd/?locale=bn" class="link-title" onclick="openNewTab(event)">জন্ম ও মৃত্যু নিবন্ধন</a></h2><span>Customer Birth And Death Registration Online Verification process</span></div>
-  <div class="box"><h2><a href="https://bit.ly/4oKUGQa" class="link-title" onclick="openNewTab(event)">উদ্দীপন ডিজিটাল সার্ভিস</a></h2><span>Explore UDDIPAN,Employee Portal : (Loan Application,NID Recheck)</span></div>
   <div class="box"><h2><a href="https://shorturl.at/8sYxF" class="link-title" onclick="openNewTab(event)">উদ্দীপন শাখা ও কর্মকর্তাগণ</a></h2><span>Branch Address, Email, Employee WhatsApp & Mobile Number</span></div>
+  <div class="box"><h2><a href="https://nvs.mra.gov.bd/dashboard/" class="link-title" onclick="openNewTab(event)">জাতীয় পরিচয়পত্র</a></h2><span>Customer NID Check Is For MFCIB Team Only.</span></div>
+  <div class="box"><h2><a href="https://everify.bdris.gov.bd/?locale=bn" class="link-title" onclick="openNewTab(event)">জন্ম ও মৃত্যু নিবন্ধন</a></h2><span>Customer Birth Registration Record Verification</span></div>
   <div class="box"><h2><a href="https://ln.run/9aWBw" class="link-title" onclick="openNewTab(event)">কাজের জন্য গুগল শিট</a></h2><span>MFCIB Verified/Reject Data List, Updating Many Types Of Work</span></div>
   <div class="box"><h2><a href="https://ln.run/k58wd" class="link-title" onclick="openNewTab(event)">উদ্দীপন অফিসের মানচিত্র</a></h2><span>UDDIPAN All Branch Office, Regional Office & Zone Office Location</span></div>
   <div class="box"><h2><a href="https://www.uddipanprobe.com/" class="link-title" onclick="openNewTab(event)">প্রোব স্বাস্থ্যসেবা</a></h2><span>Employee Profile, Service, Doctor, Health Card, Report</span></div>
-  <div class="box"><h2><a href="https://chatudpn.netlify.app/" class="link-title" onclick="openNewTab(event)">অনলাইন চ্যাট</a></h2><span>Please Identify Yourself : Username & Password</span></div>
-    <!-- Examination -->
+  <div class="box"><h2><a href="https://udpnchat.netlify.app/" class="link-title" onclick="openNewTab(event)">অনলাইন চ্যাট</a></h2><span>Please Identify Yourself : Username & Password</span></div>
+
+  <!-- Examination -->
   <div class="box">
     <h2><span class="no-click">পরিক্ষার ফলাফল</span></h2>
     <select onchange="if(this.value) window.open(this.value, '_blank', 'noopener,noreferrer'); this.selectedIndex=0;">      
@@ -310,9 +285,6 @@ footer a:hover{color:#ff6600;}
 <footer>
   © 2025 <a href="https://www.uddipan.org" class="uddipan" onclick="openNewTab(event)">UDDIPAN</a> | Developed by <a href="https://www.facebook.com/ziaulz" class="mfcib" onclick="openNewTab(event)">MFCIB</a> Team
 </footer>
-
-<!-- Custom Cursor -->
-<div id="customCursor"></div>
 
 <script>
 // Live Time
@@ -356,29 +328,15 @@ document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('selectstart', e => e.preventDefault());
 document.addEventListener('copy', e => e.preventDefault());
 document.addEventListener('cut', e => e.preventDefault());
-
-/* === Custom Cursor JS === */
-const cursor = document.getElementById("customCursor");
-document.addEventListener("mousemove", e => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
-
-// Hover effect on clickable items
-const hoverElements = document.querySelectorAll('a, button, select');
-hoverElements.forEach(el => {
-  el.addEventListener("mouseenter", () => cursor.classList.add("active"));
-  el.addEventListener("mouseleave", () => cursor.classList.remove("active"));
-});
-
+  
 /* === Mouse Idle "Zia" Circular Follow (Green) === */
 let idleTimer;
 const ziaDiv = document.createElement("div");
 ziaDiv.textContent = "Zia";
 ziaDiv.style.position = "fixed";
-ziaDiv.style.color = "#00FF00";
-ziaDiv.style.background = "rgba(0,255,0,0.1)";
-ziaDiv.style.borderRadius = "50%";
+ziaDiv.style.color = "rgba(0,128,0,0.3)"; // হালকা সবুজ
+ziaDiv.style.background = "rgba(200,255,200,0.35)"; // হালকা সবুজ গোলাকার ব্যাকগ্রাউন্ড
+ziaDiv.style.borderRadius = "50%"; // গোলাকার
 ziaDiv.style.padding = "8px 12px";
 ziaDiv.style.fontSize = "10px";
 ziaDiv.style.fontWeight = "300";
@@ -395,12 +353,13 @@ document.addEventListener("mousemove", (e) => {
   ziaDiv.style.opacity = "0";
   mouseX = e.pageX;
   mouseY = e.pageY;
-
+  
   idleTimer = setTimeout(() => {
     ziaDiv.style.opacity = "1";
+    // Circular animation
     function animateZia() {
-      angle += 0.05;
-      const radius = 20;
+      angle += 0.06; // ঘূর্ণনের গতি
+      const radius = 20; // কার্সরের চারপাশ দূরত্ব
       ziaDiv.style.left = mouseX + radius * Math.cos(angle) + "px";
       ziaDiv.style.top  = mouseY + radius * Math.sin(angle) + "px";
       if(ziaDiv.style.opacity == "1"){
@@ -408,9 +367,10 @@ document.addEventListener("mousemove", (e) => {
       }
     }
     animateZia();
-  }, 5000);
+  }, 5000); // 5 সেকেন্ড idle
 });
 </script>
 
 </body>
 </html>
+
