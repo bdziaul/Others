@@ -357,7 +357,7 @@ document.addEventListener("mousemove", (e) => {
     // Circular animation
     function animateZia() {
       angle += 0.05; // ঘূর্ণনের গতি
-      const radius = 05; // কার্সরের চারপাশ দূরত্ব
+      const radius = 10; // কার্সরের চারপাশ দূরত্ব
       ziaDiv.style.left = mouseX + radius * Math.cos(angle) + "px";
       ziaDiv.style.top  = mouseY + radius * Math.sin(angle) + "px";
       if(ziaDiv.style.opacity == "1"){
@@ -365,7 +365,7 @@ document.addEventListener("mousemove", (e) => {
       }
     }
     animateZia();
-  }, 2000); // 2 সেকেন্ড idle
+  }, 5000); // 5 সেকেন্ড idle
 });
 </script>
 
