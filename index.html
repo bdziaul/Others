@@ -5,7 +5,11 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/bdziaul/Login.php/main/login-logo.png">
+
+<!-- Apple Touch Icon (iOS) -->
 <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/bdziaul/Login.php/main/login-logo.png">
+
+<!-- Manifest -->
 <link rel="manifest" href="manifest.json">
 
 <title>UDDIPAN - Weblink</title>
@@ -21,15 +25,15 @@ body{
   text-align:center;
   padding-top:110px;
   user-select: none;
-  cursor: none; /* Hide default cursor */
+  cursor: none;
 }
 
 /* Header */
 header{
   position:fixed;
   top:0;left:0;width:100%;
-  background:rgba(0,0,0,0.9);
-  box-shadow:0 3px 8px rgba(0,255,0,0.2);
+  background: rgba(96,125,139,0.8); /* Blue-Gray 80% */
+  box-shadow:0 3px 8px rgba(0,0,0,0.12);
   z-index:1000;
   padding:10px 25px;
   display:flex;
@@ -37,14 +41,14 @@ header{
   justify-content:space-between;
   flex-wrap:wrap;
 }
-header img{height:80px; filter: drop-shadow(0 0 10px #00FF00);}
+header img{height:80px;}
 header h1{
   font-family:'Times New Roman',serif;
   font-size:50px;
   color:#00FF00;
   cursor:default;
   transition:all 0.4s ease;
-  text-shadow:0 0 5px #00FF00,0 0 10px #00FF00;
+  text-shadow:1px 1px 2px rgba(0,0,0,0.15);
   display:inline-block;
   padding:6px 12px;
   border-radius:8px;
@@ -52,15 +56,15 @@ header h1{
   overflow: hidden;
 }
 header h1:hover{
-  color:#000;
-  background: linear-gradient(to right, #00FF00, #66FF66);
-  box-shadow:0 0 20px #00FF00;
+  color:#fff;
+  background: linear-gradient(to right, #43A047, #66BB6A);
+  box-shadow:0 0 20px rgba(76,175,80,0.8);
   transform: scaleX(1.15) scaleY(1.05);
 }
 
 /* Info box */
-.info-box{text-align:right;font-size:14px;color:#0f0;}
-.time{font-weight:bold;color:#00FF00;font-size:15px;}
+.info-box{text-align:right;font-size:14px;color:#B0BEC5;} /* lighter text */
+.time{font-weight:bold;color:#B0C4DE;font-size:15px;}
 .visitor{margin-top:4px;font-size:14px;}
 
 /* Container */
@@ -75,11 +79,12 @@ header h1:hover{
 
 /* Box */
 .box{
-  background:rgba(0,0,0,0.7);
+  background: rgba(96,125,139,0.8); /* Blue-Gray 80% translucent */
   border-radius:18px;
-  box-shadow:0 3px 10px rgba(0,255,0,0.3);
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
   padding:25px 18px;
   transition:all .3s ease;
+  color:#E0F7FA; /* lighter text inside box */
 }
 .box:hover{
   transform:translateY(-6px);
@@ -88,7 +93,7 @@ header h1:hover{
 
 /* Headline */
 .box h2{ margin-bottom:10px; font-size:28px; }
-.box span:not(.no-click){color:#66FF66;font-size:18px;}
+.box span:not(.no-click){color:#B0E0E6;font-size:18px;}
 
 /* Link style */
 .link-title{
@@ -119,42 +124,14 @@ header h1:hover{
   font-size:29px;
 }
 
-/* No-click items */
-.no-click {
-  font-size:28px;
-  font-weight:700;
-  color:#00FF00;
-  cursor:default;
-  position:relative;
-  transition: color 0.3s ease, font-size 0.3s ease;
-}
-.no-click::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:-5px;
-  width:100%;
-  height:3px;
-  background-color:currentColor;
-  transform:translateX(-50%) scaleX(0);
-  transform-origin:center;
-  transition: transform 0.4s ease;
-}
-.no-click:hover{
-  color:#66FF66;
-  font-size:29px;
-}
-.no-click:hover::after{
-  transform:translateX(-50%) scaleX(1); 
-}
-
 /* Dropdown & Buttons */
 select{
   padding:8px 12px;
   border-radius:8px;
-  border:1px solid #00FF00;
-  background:rgba(0,0,0,0.5);
+  border:1px solid #B0BEC5;
+  font-size:13px;
   color: #00FF00;
+  background: rgba(96,125,139,0.8); /* Blue-Gray */
   width:100%;
   max-width:260px;
   margin-bottom:10px;
@@ -169,22 +146,21 @@ select{
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 0 0 rgba(76,175,80,0);
   transition: all 0.3s ease;
 }
 .open-btn:hover {  
-  background: linear-gradient(45deg, #66FF66, #00FF00);
-  box-shadow: 0 0 15px #00FF00;
+  background: linear-gradient(45deg, #66FF66, #99FF99);
+  box-shadow: 0 0 15px rgba(0,255,0,0.8);
   transform: scale(1.05);
 }
 
 /* Footer */
 footer{
-  background:rgba(0,0,0,0.9);
+  background: rgba(96,125,139,0.8);
   padding:15px;
   font-size:14px;
-  color:#0f0;
-  box-shadow:0 -2px 6px #00FF00;
+  color:#B0BEC5;
+  box-shadow:0 -2px 6px rgba(0,0,0,0.1);
   margin-top:40px;
   text-align:center; 
 }
@@ -206,7 +182,7 @@ footer a:hover{color:#66FF66;}
   body {padding-top:230px;} 
 }
 
-/* === Custom Cursor === */
+/* === Custom Cursor Styles === */
 #customCursor {
   position: fixed;
   top: 0;
@@ -217,7 +193,7 @@ footer a:hover{color:#66FF66;}
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  transition: width 0.15s ease, height 0.15s ease, box-shadow 0.15s ease;
+  transition: width 0.15s ease, height 0.15s ease, background 0.15s ease, border 0.15s ease;
   box-shadow: 0 0 8px #00FF00, 0 0 12px #00FF00, 0 0 20px #00FF00;
   z-index: 9999;
 }
@@ -225,25 +201,7 @@ footer a:hover{color:#66FF66;}
   width: 35px;
   height: 35px;
   border: 3px solid #00FF00;
-  box-shadow: 0 0 15px #00FF00, 0 0 25px #00FF00, 0 0 40px #00FF00;
-}
-
-/* Zia idle glow */
-#ziaGlow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  font-size: 12px;
-  font-weight: 600;
-  color: #00FF00;
-  text-shadow: 0 0 5px #00FF00,0 0 10px #00FF00,0 0 20px #00FF00;
-  pointer-events: none;
-  border-radius: 50%;
-  padding: 6px 10px;
-  background: rgba(0,255,0,0.1);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 9998;
+  box-shadow: 0 0 12px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
 }
 </style>
 </head>
@@ -259,39 +217,69 @@ footer a:hover{color:#66FF66;}
 </header>
 
 <div class="container">
-  <!-- Automation -->
+<!-- Automation -->
   <div class="box">
     <h2><span class="no-click">অটোমেশন লিংক</span></h2>
     <select id="zoneSelect">
-      <option value="" style="font-weight:bold;">আপনার জোন নির্বাচন করুন</option>
+      <option value="" style="font-weight:bold; font-size:15px;">আপনার জোন নির্বাচন করুন</option>
       <option value="http://172.16.11.57:7070/omni/index.do">৫৭. রংপুর জোন</option>
       <option value="http://172.16.11.56:7070/omni/index.do">৫৬. রাজশাহী জোন</option>
       <option value="http://172.16.11.42:7070/omni/index.do">৪২. ঢাকা জোন</option>
+      <option value="http://172.16.11.48:7070/omni/index.do">৪৮. চট্টগ্রাম জোন</option>
+      <option value="http://172.16.11.50:7070/omni/index.do">৫০. ময়মনসিংহ জোন</option>
+      <option value="http://172.16.11.49:7070/omni/index.do">৪৯. সিলেট জোন</option>
+      <option value="http://172.16.11.52:7070/omni/index.do">৫২. কুষ্টিয়া জোন</option>
+      <option value="http://172.16.11.45:7070/omni/index.do">৪৫. কুমিল্লা জোন</option>
+      <option value="http://172.16.11.54:7070/omni/index.do">৫৪. পিরোজপুর জোন</option>
+      <option value="http://172.16.11.53:7070/omni/index.do">৫৩. বরিশাল জোন</option>
+      <option value=""style="font-weight:bold; color:red;">「 ✦ Temporary-Link ✦ 」</option>
+      <option value="http://103.12.205.23:7070/omni/index.do">২৩. রংপুর জোন</option>
+      <option value="http://103.12.205.22:7070/omni/index.do">২২. রাজশাহী জোন</option>
+      <option value="http://103.12.205.24:7070/omni/index.do">২৪. ঢাকা জোন</option>
+      <option value="http://103.12.205.27:7070/omni/index.do">২৭. চট্টগ্রাম জোন</option>
+      <option value="http://103.12.205.31:7070/omni/index.do">৩১. ময়মনসিংহ জোন</option>
+      <option value="http://103.12.205.28:7070/omni/index.do">২৮. সিলেট জোন</option>
+      <option value="http://103.12.205.33:7070/omni/index.do">৩৩. কুষ্টিয়া জোন</option>
+      <option value="http://103.12.205.28:7070/omni/index.do">২৮. কুমিল্লা জোন</option>
+      <option value="http://103.12.205.36:7070/omni/index.do">৩৬. পিরোজপুর জোন</option>
+      <option value="http://103.12.205.35:7070/omni/index.do">৩৫. বরিশাল জোন</option>
+      <option value="http://103.12.205.24:7070/omni/index.do">২৪. হেড অফিস</option>
     </select>    
     <button class="open-btn" onclick="openZone()">Open Automation</button>
   </div>
 
   <!-- Weblinks -->
-  <div class="box"><h2><a href="https://mail.uddipan.org:8443/" class="link-title" onclick="openNewTab(event)">ই-মেইল / ওয়েবমেইল</a></h2><span>Zimbra E-mail & Collaboration Platform</span></div>
-  <div class="box"><h2><a href="http://103.134.88.46/hr" class="link-title" onclick="openNewTab(event)">মানবসম্পদ ব্যবস্থাপনা</a></h2><span>HR & Payroll Management</span></div>
-
-  <!-- Exam Results -->
+  <div class="box"><h2><a href="https://mail.uddipan.org:8443/" class="link-title" onclick="openNewTab(event)">ই-মেইল / ওয়েবমেইল</a></h2><span>Zimbra: Open-Source, Enterprise E-mail & Collaboration Platform With E-mail, Calendar, Contacts, File Sharing & Chat</span></div>
+  <div class="box"><h2><a href="http://103.134.88.46/hr" class="link-title" onclick="openNewTab(event)">মানবসম্পদ ব্যবস্থাপনা</a></h2><span>UDDIPAN HR: Administration, Work Time, Payroll, Attendance, Leave, Self Service, Separation Mgt. & Reports</span></div>
+  <div class="box"><h2><a href="http://103.12.205.37/uddipanonline/" class="link-title" onclick="openNewTab(event)">উদ্দীপন অনলাইন</a></h2><span>Asset, Budget, Transaction, OTP, Omni Support, RM Monitoring & Report</span></div>
+  <div class="box"><h2><a href="http://103.12.205.37/dashboard/" class="link-title" onclick="openNewTab(event)">উদ্দীপন ড্যাশবোর্ড</a></h2><span>MFP, Customer Feedback, Performer, Trend & Report</span></div>
+  <div class="box"><h2><a href="http://103.12.205.37/itmonitoringtools/" class="link-title" onclick="openNewTab(event)">আইটি মনিটরিং</a></h2><span>Support Request, Purchase, Servicing Form, Report</span></div>
+  <div class="box"><h2><a href="https://nvs.mra.gov.bd/dashboard/" class="link-title" onclick="openNewTab(event)">জাতীয় পরিচয়পত্র</a></h2><span>Customer NID Verification System Check Is For MFCIB Team Only</span></div>
+  <div class="box"><h2><a href="https://everify.bdris.gov.bd/?locale=bn" class="link-title" onclick="openNewTab(event)">জন্ম ও মৃত্যু নিবন্ধন</a></h2><span>Customer Birth And Death Registration Online Verification process</span></div>
+  <div class="box"><h2><a href="https://bit.ly/4oKUGQa" class="link-title" onclick="openNewTab(event)">উদ্দীপন ডিজিটাল সার্ভিস</a></h2><span>Explore UDDIPAN,Employee Portal : (Loan Application,NID Recheck)</span></div>
+  <div class="box"><h2><a href="https://shorturl.at/8sYxF" class="link-title" onclick="openNewTab(event)">উদ্দীপন শাখা ও কর্মকর্তাগণ</a></h2><span>Branch Address, Email, Employee WhatsApp & Mobile Number</span></div>
+  <div class="box"><h2><a href="https://ln.run/9aWBw" class="link-title" onclick="openNewTab(event)">কাজের জন্য গুগল শিট</a></h2><span>MFCIB Verified/Reject Data List, Updating Many Types Of Work</span></div>
+  <div class="box"><h2><a href="https://ln.run/k58wd" class="link-title" onclick="openNewTab(event)">উদ্দীপন অফিসের মানচিত্র</a></h2><span>UDDIPAN All Branch Office, Regional Office & Zone Office Location</span></div>
+  <div class="box"><h2><a href="https://www.uddipanprobe.com/" class="link-title" onclick="openNewTab(event)">প্রোব স্বাস্থ্যসেবা</a></h2><span>Employee Profile, Service, Doctor, Health Card, Report</span></div>
+  <div class="box"><h2><a href="https://chatudpn.netlify.app/" class="link-title" onclick="openNewTab(event)">অনলাইন চ্যাট</a></h2><span>Please Identify Yourself : Username & Password</span></div>
+    <!-- Examination -->
   <div class="box">
-    <h2><span class="no-click">পরীক্ষার ফলাফল</span></h2>
-    <select onchange="if(this.value) window.open(this.value,'_blank'); this.selectedIndex=0;">
-      <option value="" style="font-weight:bold;">Select Board</option>
-      <option value="http://www.educationboardresults.gov.bd/">Secondary & Intermediate Boards</option>
+    <h2><span class="no-click">পরিক্ষার ফলাফল</span></h2>
+    <select onchange="if(this.value) window.open(this.value, '_blank', 'noopener,noreferrer'); this.selectedIndex=0;">      
+      <option value="" style="font-weight:bold; font-size:15px;">Select Education Board</option>
+      <option value="http://www.educationboardresults.gov.bd/">Secondary & Intermediate Education Boards</option>
+      <option value="http://180.211.162.102:8444/result_arch/index.php">Bangladesh Technical Education Board</option>
+      <option value="http://results.nu.ac.bd/">National University</option>
+      <option value="https://www.eboardresults.com/v2/home">Web Based Result Publication</option>
     </select>
   </div>
 </div>
 
 <footer>
-  © 2025 <a href="https://www.uddipan.org" class="uddipan" onclick="openNewTab(event)">UDDIPAN</a> | Developed by <a href="https://www.facebook.com/ziaulz" class="mfcib" onclick="openNewTab(event)">MFCIB</a>
+  © 2025 <a href="https://www.uddipan.org" class="uddipan" onclick="openNewTab(event)">UDDIPAN</a> | Developed by <a href="https://www.facebook.com/ziaulz" class="mfcib" onclick="openNewTab(event)">MFCIB</a> Team
 </footer>
 
-<!-- Custom Cursor -->
 <div id="customCursor"></div>
-<div id="ziaGlow">Zia</div>
 
 <script>
 // Live Time
@@ -314,57 +302,79 @@ document.getElementById('visitorCount').textContent=count;
 // Open Zone
 function openZone(){
   const url = document.getElementById("zoneSelect").value;
-  if(url) window.open(url,'_blank'); else alert("🚫 দয়া করে জোন নির্বাচন করুন!");
+  if(url) window.open(url, '_blank', 'noopener,noreferrer'); 
+  else alert("🚫 দয়া করে প্রথমে আপনার জোন নির্বাচন করুন.....❗");
 }
 
 // Open links in new tab
 function openNewTab(e){
   e.preventDefault();
-  window.open(e.currentTarget.href,'_blank');
+  window.open(e.currentTarget.href, '_blank', 'noopener,noreferrer');
 }
 
-// Copy Protection
-document.addEventListener('keydown', e => {
-  if(e.ctrlKey && 'cusxapij'.includes(e.key.toLowerCase())) e.preventDefault();
+/* Copy Protection */
+document.addEventListener('keydown', function(e){
+  if(e.ctrlKey && (e.key==='c' || e.key==='u' || e.key==='s' || e.key==='x' || e.key==='a' || e.key==='p' || e.key==='i' || e.key==='j')){
+    e.preventDefault(); return false;
+  }
 });
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('selectstart', e => e.preventDefault());
 document.addEventListener('copy', e => e.preventDefault());
 document.addEventListener('cut', e => e.preventDefault());
 
-// Custom Cursor
+/* Custom Cursor */
 const cursor = document.getElementById("customCursor");
-const ziaGlow = document.getElementById("ziaGlow");
-let mouseX = 0, mouseY = 0;
-let angle = 0;
-let idleTimer;
-
 document.addEventListener("mousemove", e => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
+});
+
+// Hover effect on clickable items
+const hoverElements = document.querySelectorAll('a, button, select');
+hoverElements.forEach(el => {
+  el.addEventListener("mouseenter", () => cursor.classList.add("active"));
+  el.addEventListener("mouseleave", () => cursor.classList.remove("active"));
+});
+
+/* Mouse Idle "Zia" Circular Follow */
+let idleTimer;
+const ziaDiv = document.createElement("div");
+ziaDiv.textContent = "Zia";
+ziaDiv.style.position = "fixed";
+ziaDiv.style.color = "#00FF00";
+ziaDiv.style.background = "rgba(0,255,0,0.1)";
+ziaDiv.style.borderRadius = "50%";
+ziaDiv.style.padding = "8px 12px";
+ziaDiv.style.fontSize = "10px";
+ziaDiv.style.fontWeight = "300";
+ziaDiv.style.pointerEvents = "none";
+ziaDiv.style.transition = "opacity 0.3s ease, transform 0.1s linear";
+ziaDiv.style.opacity = "0";
+document.body.appendChild(ziaDiv);
+
+let mouseX = 0, mouseY = 0;
+let angle = 0;
+
+document.addEventListener("mousemove", (e) => {
+  clearTimeout(idleTimer);
+  ziaDiv.style.opacity = "0";
   mouseX = e.pageX;
   mouseY = e.pageY;
 
-  clearTimeout(idleTimer);
-  ziaGlow.style.opacity = "0";
-
-  idleTimer = setTimeout(()=>{
-    ziaGlow.style.opacity = "1";
-    function animateZia(){
+  idleTimer = setTimeout(() => {
+    ziaDiv.style.opacity = "1";
+    function animateZia() {
       angle += 0.05;
       const radius = 20;
-      ziaGlow.style.left = mouseX + radius * Math.cos(angle) + "px";
-      ziaGlow.style.top  = mouseY + radius * Math.sin(angle) + "px";
-      if(parseFloat(ziaGlow.style.opacity) === 1) requestAnimationFrame(animateZia);
+      ziaDiv.style.left = mouseX + radius * Math.cos(angle) + "px";
+      ziaDiv.style.top  = mouseY + radius * Math.sin(angle) + "px";
+      if(ziaDiv.style.opacity == "1"){
+        requestAnimationFrame(animateZia);
+      }
     }
     animateZia();
-  },5000);
-});
-
-// Hover effect
-document.querySelectorAll('a, button, select').forEach(el=>{
-  el.addEventListener("mouseenter", ()=>cursor.classList.add("active"));
-  el.addEventListener("mouseleave", ()=>cursor.classList.remove("active"));
+  }, 5000);
 });
 </script>
 
