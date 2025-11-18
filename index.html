@@ -79,16 +79,20 @@ header h1:hover{
 
 /* Box */
 .box{
-  background: rgba(26, 4, 4); /* Blue-Gray 80% translucent */
+  background: rgba(96, 125, 139, 0.8); /* Blue-Gray 80% translucent */
   border-radius:18px;
-  box-shadow:0 3px 10px rgba(0,0,0,0.1);
-  padding:25px 18px;
-  transition:all .3s ease;
+  box-shadow:0 3px 10px rgba(0,0,0,0.15); /* subtle shadow */
+  padding:35px 25px; /* একটু বড় padding */
+  transition: all .3s ease;
   color:#FFEB99; /* lighter text inside box */
+  text-align: center; /* সব content center */
+  transform: scale(1.05); /* একটু বড় দেখানোর জন্য */
 }
+
+/* Hover effect remove */
 .box:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 20px #00FF00, 0 0 30px #FFEB99;
+  transform: scale(1.05); /* hover e আর movement নেই */
+  box-shadow:0 3px 10px rgba(0,0,0,0.15); /* hover e glow নেই */
 }
 /* Headline */
 .box h2{ margin-bottom:10px; font-size:28px; }
