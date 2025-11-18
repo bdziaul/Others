@@ -21,18 +21,18 @@
 body{
   font-family:"Noto Sans Bengali",sans-serif;
   background:linear-gradient(135deg,#f7fafc 0%,#eef2f7 100%);
-  color:#FFEB99;
+  color:#333;
   text-align:center;
   padding-top:110px;
   user-select: none;
-  cursor: none;
+  cursor: none; /* Custom Cursor */
 }
 
 /* Header */
 header{
   position:fixed;
   top:0;left:0;width:100%;
-  background: rgba(96,125,139,0.8); /* Blue-Gray 80% */
+  background:#fff;
   box-shadow:0 3px 8px rgba(0,0,0,0.12);
   z-index:1000;
   padding:10px 25px;
@@ -45,7 +45,7 @@ header img{height:80px;}
 header h1{
   font-family:'Times New Roman',serif;
   font-size:50px;
-  color:#FFEB99;
+  color:#008000;
   cursor:default;
   transition:all 0.4s ease;
   text-shadow:1px 1px 2px rgba(0,0,0,0.15);
@@ -63,8 +63,8 @@ header h1:hover{
 }
 
 /* Info box */
-.info-box{text-align:right;font-size:14px;color:#B0BEC5;} /* lighter text */
-.time{font-weight:bold;color:#B0C4DE;font-size:15px;}
+.info-box{text-align:right;font-size:14px;color:#444;}
+.time{font-weight:bold;color:#c11b1b;font-size:15px;}
 .visitor{margin-top:4px;font-size:14px;}
 
 /* Container */
@@ -90,17 +90,16 @@ header h1:hover{
   transform:translateY(-6px);
   box-shadow:0 0 20px #00FF00, 0 0 30px #FFEB99;
 }
-
 /* Headline */
 .box h2{ margin-bottom:10px; font-size:28px; }
-.box span:not(.no-click){color:#B0E0E6;font-size:18px;}
+.box span:not(.no-click){color:#8B0000;font-size:18px;}
 
 /* Link style */
 .link-title{
   font-size:28px;
   position:relative;
   text-decoration:none;
-  color:#FFEB99;
+  color:#0a4d9b;
   font-weight:600;
   transition:color .3s ease, font-size .3s ease;
 }
@@ -120,56 +119,85 @@ header h1:hover{
   transform:translateX(-50%) scaleX(1);
 }
 .link-title:hover{
-  color:#66FF66;
+  color:#ff6600;
   font-size:29px;
+}
+
+/* Automation / Exam */
+.no-click {
+  font-size:28px;
+  font-weight:700;
+  color:#0a4d9b;
+  cursor:default;
+  position:relative;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+.no-click::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-5px;
+  width:100%;
+  height:3px;
+  background-color:currentColor;
+  transform:translateX(-50%) scaleX(0);
+  transform-origin:center;
+  transition: transform 0.4s ease;
+}
+.no-click:hover{
+  color:#ff6600;
+  font-size:29px;
+}
+.no-click:hover::after{
+  transform:translateX(-50%) scaleX(1); 
 }
 
 /* Dropdown & Buttons */
 select{
   padding:8px 12px;
   border-radius:8px;
-  border:1px solid #B0BEC5;
+  border:1px solid #ccc;
   font-size:13px;
-  color: #FFEB99;
-  background: rgba(96,125,139,0.8); /* Blue-Gray */
+  color: #008000;
   width:100%;
   max-width:260px;
   margin-bottom:10px;
 }
 .open-btn {
   display: inline-block;
-  background: linear-gradient(45deg, #00FF00, #66FF66);
-  color: #000;
+  background: linear-gradient(45deg, #43A047, #66BB6A);
+  color: #fff;
   padding: 10px 12px;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 0 0 rgba(76,175,80,0);
   transition: all 0.3s ease;
 }
 .open-btn:hover {  
-  background: linear-gradient(45deg, #66FF66, #99FF99);
-  box-shadow: 0 0 15px rgba(0,255,0,0.8);
+  background: linear-gradient(45deg, #8B0000, #B22222);
+  box-shadow: 0 0 15px rgba(76,175,80,0.8);
   transform: scale(1.05);
 }
 
 /* Footer */
 footer{
-  background: rgba(96,125,139,0.8);
+  background:#fff;
   padding:15px;
   font-size:14px;
-  color:#B0BEC5;
+  color:#555;
   box-shadow:0 -2px 6px rgba(0,0,0,0.1);
   margin-top:40px;
   text-align:center; 
 }
 footer a.uddipan,footer a.mfcib{
-  color:#FFEB99;
+  color:#008000;
   text-decoration:none;
   font-weight:600;
 }
-footer a:hover{color:#66FF66;}
+footer a:hover{color:#ff6600;}
 
 /* Responsive */
 @media(max-width:800px){
@@ -189,19 +217,19 @@ footer a:hover{color:#66FF66;}
   left: 0;
   width: 20px;
   height: 20px;
-  border: 2px solid #FFEB99;
+  border: 2px solid #00FF00;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: width 0.15s ease, height 0.15s ease, background 0.15s ease, border 0.15s ease;
-  box-shadow: 0 0 8px #00FF00, 0 0 12px #00FF00, 0 0 20px #FFEB99;
+  box-shadow: 0 0 8px #00FF00, 0 0 12px #00FF00, 0 0 20px #00FF00;
   z-index: 9999;
 }
 #customCursor.active {
   width: 35px;
   height: 35px;
-  border: 3px solid #FFEB99;
-  box-shadow: 0 0 12px #00FF00, 0 0 20px #00FF00, 0 0 30px #FFEB99;
+  border: 3px solid #00FF00;
+  box-shadow: 0 0 12px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
 }
 </style>
 </head>
@@ -217,7 +245,7 @@ footer a:hover{color:#66FF66;}
 </header>
 
 <div class="container">
-<!-- Automation -->
+  <!-- Automation -->
   <div class="box">
     <h2><span class="no-click">অটোমেশন লিংক</span></h2>
     <select id="zoneSelect">
@@ -279,6 +307,7 @@ footer a:hover{color:#66FF66;}
   © 2025 <a href="https://www.uddipan.org" class="uddipan" onclick="openNewTab(event)">UDDIPAN</a> | Developed by <a href="https://www.facebook.com/ziaulz" class="mfcib" onclick="openNewTab(event)">MFCIB</a> Team
 </footer>
 
+<!-- Custom Cursor -->
 <div id="customCursor"></div>
 
 <script>
@@ -299,7 +328,7 @@ count=count?parseInt(count)+1:1;
 localStorage.setItem('visitorCount',count);
 document.getElementById('visitorCount').textContent=count;
 
-// Open Zone
+// Open Zone (New Tab)
 function openZone(){
   const url = document.getElementById("zoneSelect").value;
   if(url) window.open(url, '_blank', 'noopener,noreferrer'); 
@@ -312,10 +341,11 @@ function openNewTab(e){
   window.open(e.currentTarget.href, '_blank', 'noopener,noreferrer');
 }
 
-/* Copy Protection */
+/* === Copy Protection Script === */
 document.addEventListener('keydown', function(e){
   if(e.ctrlKey && (e.key==='c' || e.key==='u' || e.key==='s' || e.key==='x' || e.key==='a' || e.key==='p' || e.key==='i' || e.key==='j')){
-    e.preventDefault(); return false;
+    e.preventDefault();
+    return false;
   }
 });
 document.addEventListener('contextmenu', e => e.preventDefault());
@@ -323,7 +353,7 @@ document.addEventListener('selectstart', e => e.preventDefault());
 document.addEventListener('copy', e => e.preventDefault());
 document.addEventListener('cut', e => e.preventDefault());
 
-/* Custom Cursor */
+/* === Custom Cursor JS === */
 const cursor = document.getElementById("customCursor");
 document.addEventListener("mousemove", e => {
   cursor.style.left = e.clientX + "px";
@@ -337,7 +367,7 @@ hoverElements.forEach(el => {
   el.addEventListener("mouseleave", () => cursor.classList.remove("active"));
 });
 
-/* Mouse Idle "Zia" Circular Follow */
+/* === Mouse Idle "Zia" Circular Follow (Green) === */
 let idleTimer;
 const ziaDiv = document.createElement("div");
 ziaDiv.textContent = "Zia";
