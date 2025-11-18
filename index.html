@@ -80,16 +80,16 @@ header h1:hover{
 .box{
   background:#fff;
   border-radius:18px;
-  box-shadow: 0 0 12px rgba(0,255,0,0.6); /* সবদিক green glow */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* normal shadow */
   padding:25px 18px;
   transition: all 0.3s ease;
   transform: scale(1);
 }
 
-/* Hover: shrink slightly এবং glow আরও হাইলাইট হবে */
+/* Hover effect: green glow */
 .box:hover{
-  transform: scale(0.95);
-  box-shadow: 0 0 20px rgba(0,255,0,0.9); /* hover এ glow বেশি উজ্জ্বল */
+  box-shadow: 0 0 20px rgba(0,255,0,0.7), 0 0 30px rgba(0,255,0,0.5);
+  transform: scale(1.02); /* চাইলে সামান্য বড়ও হবে */
 }
 /* Headline */
 .box h2{ margin-bottom:10px; font-size:28px; }
