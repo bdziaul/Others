@@ -26,13 +26,46 @@ body{
   padding-top:110px;
   user-select: none;
 
-  /* === Neon Green Mouse Cursor === */
-  cursor: url('https://i.imgur.com/IO2nH0H.png') 16 16, auto;
+<style>
+/* Hide default cursor */
+body {
+  cursor: none;
 }
 
-a:hover, button:hover, select:hover {
-  cursor: url('https://i.imgur.com/YXw3u7e.png') 16 16, pointer;
+/* Custom cursor */
+#customCursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #00FF00; /* Neon Green */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s linear, width 0.1s ease, height 0.1s ease, border-color 0.1s ease;
+  z-index: 9999;
 }
+
+/* Hover effects for links/buttons/selects */
+a:hover ~ #customCursor,
+button:hover ~ #customCursor,
+select:hover ~ #customCursor {
+  width: 24px;
+  height: 24px;
+  border-color: #00FF66; /* Brighter Neon Green */
+}
+</style>
+
+<!-- Cursor element -->
+<div id="customCursor"></div>
+
+<script>
+const cursor = document.getElementById('customCursor');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+</script>
 
 /* Header */
 header{
